@@ -16,28 +16,28 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: ms-client-service
+        - id: tc-f4-ms-customer
           uri: lb://tc-f4-ms-client
           predicates:
             - Path=/ms_client/**
           filters:
             - RewritePath=/ms_client/(?<path>.*), /$\{path}
 
-        - id: ms-product-catalog-service
+        - id: tc-f4-ms-product-catalog
           uri: lb://tc-f4-ms-product-catalog
           predicates:
             - Path=/ms_product_catalog/**
           filters:
             - RewritePath=/ms_product_catalog/(?<path>.*), /$\{path}
 
-        - id: ms-order-manager-service
+        - id: tc-f4-ms-order-manager
           uri: lb://tc-f4-ms-order-manager
           predicates:
             - Path=/ms_order_manager/**
           filters:
             - RewritePath=/ms_order_manager/(?<path>.*), /$\{path}
 
-        - id: ms-logistics-service
+        - id: tc-f4-ms-logistics
           uri: lb://tc-f4-ms-logistics
           predicates:
             - Path=/ms_logistics/**
