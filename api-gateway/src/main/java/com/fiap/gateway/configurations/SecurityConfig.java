@@ -39,7 +39,7 @@ public class SecurityConfig {
                 exchange
                     .pathMatchers("/")
                     .permitAll()
-                    .pathMatchers("/ms_client/**")
+                    .pathMatchers("/ms_customer/**")
                     .permitAll()
                     .pathMatchers("/ms_product_catalog/**")
                     .permitAll()

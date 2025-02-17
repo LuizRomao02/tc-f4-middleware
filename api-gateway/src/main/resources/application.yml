@@ -17,11 +17,11 @@ spring:
           lower-case-service-id: true
       routes:
         - id: tc-f4-ms-customer
-          uri: lb://tc-f4-ms-client
+          uri: lb://tc-f4-ms-customer
           predicates:
-            - Path=/ms_client/**
+            - Path=/ms_customer/**
           filters:
-            - RewritePath=/ms_client/(?<path>.*), /$\{path}
+            - RewritePath=/ms_customer/(?<path>.*), /$\{path}
 
         - id: tc-f4-ms-product-catalog
           uri: lb://tc-f4-ms-product-catalog
